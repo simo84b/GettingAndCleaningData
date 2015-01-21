@@ -20,13 +20,19 @@ setupAndDownload <- function(folderName, url, destFile, isZipped=TRUE){
   dateDownloaded
 }
 
+#This function extracts and prepares test data for merging with the train data
 extractAndRenameTestData<-function(){
     
     #first of all, we read the files containing the descriptions of activities performed and features measured
-    #we also read the list of activities and the subjects who performed them
+    #(giving them appropriate column names)
     activityLabels <- read.table("activity_labels.txt", col.names=c("activity_id","activityDescription"))
     features <- read.table("features.txt", col.names=c("feature_id","featureDescription"))
+    
+    #the features data need to be cleaned before using them as column names, so we use gsub to remove the
+    #following characters: -(),
     features$featureDescription <- gsub("\\-|\\(|\\)|\\,","",as.character(features$featureDescription))
+    
+    #we also read the list of activities and the subjects who performed them
     testActivityId <- read.table("./test/y_test.txt", col.names=c("activity_id"))
     subjects <- read.table("./test/subject_test.txt", col.names="subject_id")
     
@@ -43,13 +49,19 @@ extractAndRenameTestData<-function(){
     testDataComplete
 }
 
+#This function extracts and prepares train data for merging with the test data
 extractAndRenameTrainData<-function(){
     
     #first of all, we read the files containing the descriptions of activities performed and features measured
-    #we also read the list of activities and the subjects who performed them
+    #(giving them appropriate column names)
     activityLabels <- read.table("activity_labels.txt", col.names=c("activity_id","activityDescription"))
     features <- read.table("features.txt", col.names=c("feature_id","featureDescription"))
+    
+    #the features data need to be cleaned before using them as column names, so we use gsub to remove the
+    #following characters: -(),
     features$featureDescription <- gsub("\\-|\\(|\\)|\\,","",as.character(features$featureDescription))
+    
+    #we also read the list of activities and the subjects who performed them
     trainingActivityId <- read.table("./train/y_train.txt", col.names=c("activity_id"))
     subjects <- read.table("./train/subject_train.txt", col.names="subject_id")
     
@@ -66,20 +78,33 @@ extractAndRenameTrainData<-function(){
     trainDataComplete
 }
 
+#This is the last step, where train data and test data are merged and we create a second dataset
+#with the mean of every measure column
 mergeAndSelect <- function(testDataComplete, trainDataComplete){
     
+    #Merging (using rbind)
     dataset <- rbind(testDataComplete,trainDataComplete)
+    
+    #Here we select only the measure columns that contain the words "mean" or "std", by using the grep function
+    #Then we append to the result dataset the activity_id, activityDescription and subject_id columns with cbind
     meanAndStdData <- cbind(dataset$activity_id, dataset$activityDescription, dataset$subject_id, dataset[,grep(paste(c("mean","std"), collapse="|"),colnames(dataset),ignore.case=TRUE)])
+    
+    #With the last function we lost the correct names of the first three columns, which need to be renamed
     colnames(meanAndStdData)[0:3] <- c("activity_id","activityDescription","subject_id")
+    
+    #Last step - summarise_each calculates the average of each variable for each activity and each subject
     cleandataset <- summarise_each(group_by(meanAndStdData, activity_id, activityDescription, subject_id), funs(mean))
     cleandataset
 }
 
+#This is the only function that needs to be called - you can customize your output by editing
+#the setupAndDownload parameters, and the filename of write.table
 run_analysis <- function(){
     library(dplyr)
-    setupAndDownload("cleandata","https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip","UCIHARDataset.zip")
+    dateDownloaded <- setupAndDownload("cleandata","https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip","UCIHARDataset.zip")
     testdata <- extractAndRenameTestData()
     traindata <- extractAndRenameTrainData()
     cleandata <- mergeAndSelect(testdata, traindata)
     write.table(cleandata, file="../cleandataset.txt", row.name=FALSE)
+    write.table(dateDownloaded, file="../dateDownloaded.txt")
 }
