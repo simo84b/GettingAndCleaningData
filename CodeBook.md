@@ -36,4 +36,26 @@ The data elaborated using run_analysis.R have selected only the mean and standar
 | tBodyGyromeanZ | mean of jerk signal (derived from angular velocity) on the Z-axis |  |
 | tBodyGyrostdX | standard deviation of jerk signal (derived from angular velocity) on the X-axis |  |
 | tBodyGyrostdY | standard deviation of jerk signal (derived from angular velocity) on the Y-axis |  |
-| tBodyGyrostdZ | standard deviation of ajerk signal (derived from angular velocity) on the Z-axis |  |
+| tBodyGyrostdZ | standard deviation of jerk signal (derived from angular velocity) on the Z-axis |  |
+| tBodyGyroJerkmeanX | mean of jerk signal at X-axis |  |
+| tBodyGyroJerkmeanY | mean of jerk signal at Y-axis |  |
+| tBodyGyroJerkmeanZ | mean of jerk signal at Z-axis |  |
+| tBodyGyroJerkstdX | standard deviation of jerk signal at X-axis |  |
+| tBodyGyroJerkstdY | standard deviation of jerk signal at Y-axis |  |
+| tBodyGyroJerkstdZ | standard deviation of jerk signal at Z-axis |  |
+| tBodyAccMagmean | mean of magnitude of body acceleration |  |
+| tBodyAccMagstd | standard deviation of magnitude of body acceleration |  |
+| tGravityAccMagmean | mean of magnitude of gravity acceleration |  |
+| tGravityAccMagstd | standard deviation of magnitude of gravity acceleration |  |
+| tBodyAccJerkMagmean | mean of magnitude jerk signal (derived from body acceleration) |  |
+| tBodyAccJerkMagstd | standard deviation of magnitude jerk signal (derived from body acceleration) |  |
+| tBodyGyroMagmean | mean of magnitude of angular velocity |  |
+| tBodyGyroMagstd | standard deviation of magnitude of angular velocity |  |
+| tBodyGyroJerkMagmean | mean of magnitude jerk signal (derived from angular velocity) |  |
+| tBodyGyroJerkMagstd | standard deviation of magnitude jerk signal (derived from angular velocity) |  |
+| fBodyAccmeanX | mean of Fast Fourier Transform of body acceleration on the X-axis |  |
+| fBodyAccmeanY | mean of Fast Fourier Transform of body acceleration on the Y-axis |  |
+| fBodyAccmeanZ | mean of Fast Fourier Transform of body acceleration on the Z-axis |  |
+| fBodyAccstdX | standard deviation of Fast Fourier Transform of body acceleration on the X-axis |  |
+| fBodyAccstdY | standard deviation of Fast Fourier Transform of body acceleration on the Y-axis |  |
+| fBodyAccstdZ | standard deviation of Fast Fourier Transform of body acceleration on the Z-axis |  |
