@@ -53,9 +53,29 @@ The data elaborated using run_analysis.R have selected only the mean and standar
 | tBodyGyroMagstd | standard deviation of magnitude of angular velocity |  |
 | tBodyGyroJerkMagmean | mean of magnitude jerk signal (derived from angular velocity) |  |
 | tBodyGyroJerkMagstd | standard deviation of magnitude jerk signal (derived from angular velocity) |  |
-| fBodyAccmeanX | mean of Fast Fourier Transform of body acceleration on the X-axis |  |
-| fBodyAccmeanY | mean of Fast Fourier Transform of body acceleration on the Y-axis |  |
-| fBodyAccmeanZ | mean of Fast Fourier Transform of body acceleration on the Z-axis |  |
-| fBodyAccstdX | standard deviation of Fast Fourier Transform of body acceleration on the X-axis |  |
-| fBodyAccstdY | standard deviation of Fast Fourier Transform of body acceleration on the Y-axis |  |
-| fBodyAccstdZ | standard deviation of Fast Fourier Transform of body acceleration on the Z-axis |  |
+| fBodyAccmeanX | Fast Fourier Transform of mean body acceleration on the X-axis |  |
+| fBodyAccmeanY | Fast Fourier Transform of mean body acceleration on the Y-axis |  |
+| fBodyAccmeanZ | Fast Fourier Transform of mean body acceleration on the Z-axis |  |
+| fBodyAccstdX | Fast Fourier Transform of standard deviation body acceleration on the X-axis |  |
+| fBodyAccstdY | Fast Fourier Transform of standard deviation body acceleration on the Y-axis |  |
+| fBodyAccstdZ | Fast Fourier Transform of standard deviation body acceleration on the Z-axis |  |
+| fBodyAccJerkmeanX | Fast Fourier Transform of mean jerk signal (derived from body acceleration) at X- axis |  |
+| fBodyAccJerkmeanY | Fast Fourier Transform of mean jerk signal (derived from body acceleration) at Y- axis |  |
+| fBodyAccJerkmeanZ | Fast Fourier Transform of mean jerk signal (derived from body acceleration) at Z- axis |  |
+| fBodyAccJerkstdX | Fast Fourier Transform of standard deviation jerk signal (derived from body acceleration) at X- axis |  |
+| fBodyAccJerkstdY | Fast Fourier Transform of standard deviation jerk signal (derived from body acceleration) at Y- axis |  |
+| fBodyAccJerkstdZ | Fast Fourier Transform of standard deviation jerk signal (derived from body acceleration) at Z- axis |  |
+| fBodyGyromeanX | Fast Fourier Transform of mean angular velocity at X-axis |  |
+| fBodyGyromeanY | Fast Fourier Transform of mean angular velocity at Y-axis |  |
+| fBodyGyromeanZ | Fast Fourier Transform of mean angular velocity at Z-axis |  |
+| fBodyGyrostdX | Fast Fourier Transform of standard deviation angular velocity at X-axis |  |
+| fBodyGyrostdY | Fast Fourier Transform of standard deviation angular velocity at Y-axis |  |
+| fBodyGyrostdZ | Fast Fourier Transform of standard deviation angular velocity at Z-axis |  |
+| fBodyAccMagmean | Fast Fourier Transform of mean magnitude of body acceleration |
+| fBodyAccMagstd | Fast Fourier Transform of standard deviation magnitude of body acceleration |
+| fBodyBodyAccJerkMagmean | Fast Fourier Transform of mean magnitude of jerk signal (derived from body acceleration) |  |
+| fBodyBodyAccJerkMagstd | Fast Fourier Transform of standard deviation magnitude of jerk signal (derived from body acceleration) |  |
+| fBodyBodyGyroMagmean | Fast Fourier Transform of mean magnitude of angular velocity |  |
+| fBodyBodyGyroMagstd | Fast Fourier Transform of standard deviation magnitude of angular velocity |  |
+| fBodyBodyGyroJerkMagmean | Fast Fourier Transform of mean magnitude of jerk signal (derived from angular velocity) |  |
+| fBodyBodyGyroJerkMagstd | Fast Fourier Transform of standard deviation magnitude of jerk signal (derived from angular velocity) |  |
