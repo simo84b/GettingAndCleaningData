@@ -6,6 +6,8 @@ Subsequently, the body linear acceleration and angular velocity were derived in 
 
 Finally a Fast Fourier Transform (FFT) was applied to some of these signals producing fBodyAcc-XYZ, fBodyAccJerk-XYZ, fBodyGyro-XYZ, fBodyAccJerkMag, fBodyGyroMag, fBodyGyroJerkMag. (Note the 'f' to indicate frequency domain signals). 
 
+The data elaborated using run_analysis.R have selected only the mean and standard deviation of the variables mentioned above, and have been grouped by activity and subject taking for each of the variables their average value.
+
 | Variable Name   |      Description      |  Values (if applicable) |
 |-----------------|:---------------------:|------------------------:|
 | activity_id        | unique id the activity performed | from 1 to 6 |
