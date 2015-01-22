@@ -85,9 +85,10 @@ mergeAndSelect <- function(testDataComplete, trainDataComplete){
     #Merging (using rbind)
     dataset <- rbind(testDataComplete,trainDataComplete)
     
-    #Here we select only the measure columns that contain the words "mean" or "std", by using the grep function
+    #Here we select only the measure columns that contain the words "mean" or "std", by using the grep function (excluding meanFreq, which is
+    #the weighted average of the frequency components)
     #Then we append to the result dataset the activity_id, activityDescription and subject_id columns with cbind
-    meanAndStdData <- cbind(dataset$activity_id, dataset$activityDescription, dataset$subject_id, dataset[,grep(paste(c("mean","std"), collapse="|"),colnames(dataset),ignore.case=TRUE)])
+    meanAndStdData <- cbind(dataset$activity_id, dataset$activityDescription, dataset$subject_id, dataset[,grep(paste(c("meanX","meanY","meanZ","std","Magmean$"), collapse="|"),colnames(dataset),ignore.case=TRUE)])
     
     #With the last function we lost the correct names of the first three columns, which need to be renamed
     colnames(meanAndStdData)[0:3] <- c("activity_id","activityDescription","subject_id")
